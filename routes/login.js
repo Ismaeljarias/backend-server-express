@@ -10,6 +10,7 @@ var Usuario = require('../models/usuario');
 // Google
 var CLIENT_ID = require('../config/config').CLIENT_ID;
 const {OAuth2Client} = require('google-auth-library');
+
 const client = new OAuth2Client(CLIENT_ID);
 
 //============================================================
@@ -68,7 +69,7 @@ app.post('/google', async(req, res) => {
 
         res.status(200).json({
           ok: true,
-          message: usuarioDB,
+          usuario: usuarioDB,
           token: token,
           id: usuarioDB._id
         });
@@ -89,7 +90,7 @@ app.post('/google', async(req, res) => {
 
         res.status(200).json({
           ok: true,
-          message: usuarioDB,
+          usuario: usuarioDB,
           token: token,
           id: usuarioDB._id
         });
@@ -148,7 +149,7 @@ app.post('/', (req, res) => {
 
     res.status(200).json({
       ok: true,
-      message: usuarioDB,
+      usuario: usuarioDB,
       token: token,
       id: usuarioDB._id
     });

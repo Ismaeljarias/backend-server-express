@@ -105,7 +105,7 @@ function subirPorTipo( tipo, id, archivo, nombreArchivo, res ){
         return res.status(200).json({
           ok: true,
           mensaje: 'Imagen de usuario actualizada',
-          usuarioActualizado: usuarioActualizado
+          usuario: usuarioActualizado
         });
       });
     });
